@@ -76,8 +76,8 @@ Lo único importante para empezar es la pestaña **PANTALLA DEL CLIENTE → Moni
 
 En **COBRO** cargás el alias, el descuento por efectivo y los planes de cuotas.
 
-La pestaña **MERCADO PAGO** viene apagada y así conviene dejarla: sirve para detectar
-las transferencias en la cuenta del negocio, y necesita un token que no tenés.
+La pestaña **MERCADO PAGO** viene apagada. Si querés probarla con tu propia cuenta,
+está explicado [más abajo](#probar-la-verificación-de-mercado-pago-con-tu-propia-cuenta).
 
 Cuando termines: **Guardar y bloquear**.
 
@@ -97,6 +97,72 @@ Cuando termines: **Guardar y bloquear**.
 
 El borde del círculo funciona como reloj: muestra cuánto falta para que la pantalla del
 cliente se cierre sola.
+
+---
+
+## Probar la verificación de Mercado Pago, con tu propia cuenta
+
+Lo único que no vas a poder conectar es **la cuenta del negocio**: necesita su token,
+que es la llave de esa cuenta y no se comparte. Pero la función la podés probar igual
+con **tu propia cuenta de Mercado Pago**: mientras el cliente ve el importe, el programa
+detecta la transferencia que llega a tu alias y te avisa, sin que tengas que mirar el
+celular.
+
+### 1. Sacá tu Access Token
+
+1. Entrá a [mercadopago.com.ar/developers](https://www.mercadopago.com.ar/developers)
+   con tu cuenta → **Tus integraciones** → **Crear aplicación**.
+2. Nombre: por ejemplo `Cobro Flotante`. Para esto sirve cualquier tipo de solución; si
+   te pregunta por una plataforma de e-commerce o por marketplace, respondé que no.
+3. Adentro de la aplicación: **Credenciales de producción**. Si te pide activarlas,
+   completá la industria y un sitio web (si no tenés, sirve tu Instagram o cualquier
+   página tuya).
+4. Copiá el **Access Token**: empieza con `APP_USR-` y es el largo. No sirven la
+   *Public Key* (también empieza con `APP_USR-`, pero es corta) ni las credenciales de
+   prueba (`TEST-...`), que nunca ven transferencias reales.
+
+> ⚠ **El token es la llave de tu cuenta**: permite mucho más que leer pagos. No lo
+> mandes por chat ni lo pegues en ningún otro lado — tampoco a mí. En el programa queda
+> cifrado para tu usuario de Windows en tu PC: copiado a otra computadora no sirve, y
+> los registros de `data\logs\` nunca lo incluyen. Cuando termines de probar, en
+> MERCADO PAGO tocá **Borrar token**. Si sospechás que se filtró, renovalo desde
+> Credenciales de producción (los tres puntos → *Renovar*).
+
+### 2. Cargalo en el programa
+
+Clic derecho en el ícono → **Configuración...** → contraseña:
+
+1. **COBRO**: poné **tu** alias. El que ve el cliente tiene que ser el de la cuenta del
+   token, si no, la transferencia llega a otro lado y nunca se detecta.
+2. **MERCADO PAGO**: pegá el token → **Guardar token** → **Probar conexión**. Tiene que
+   aparecer el nombre de tu cuenta.
+3. Tildá **Verificar los cobros con Mercado Pago**.
+4. **Guardar y bloquear**.
+
+### 3. Probalo
+
+1. Clic en el círculo, cargá un importe chico y **sin centavos** (por ejemplo `10`) y
+   elegí **Transferencia**.
+2. Desde otra cuenta —la de un amigo, o tu banco— transferí **exactamente ese importe**
+   a tu alias.
+3. En unos segundos, al lado del ícono aparece **✓ LLEGÓ $ 10**. Cerrás el cobro como
+   siempre, con un segundo clic en el círculo.
+
+A tener en cuenta:
+
+- Detecta **transferencias** (desde Mercado Pago, un banco u otra billetera). No pagos
+  con tarjeta ni con QR.
+- Sólo busca mientras está abierta la pantalla de **Transferencia**, no la de Formas de
+  pago.
+- Si llegan dos transferencias por el mismo importe, avisa **DOS PAGOS IGUALES** y no
+  elige ninguna: con dos pagos iguales no hay forma de saber cuál es el de ese cliente.
+- **SIN ACCESO** quiere decir que el token no sirve o venció; **SIN CONEXIÓN**, que no
+  hay internet. En los dos casos el cobro sigue funcionando igual, a mano.
+
+**Lo que más me sirve saber de esta prueba: cuánto tardó en aparecer el aviso.** Queda
+anotado en `C:\cobro-flotante\data\logs\mp.log`, en la línea que dice `encontrado ...
+demora`. Mandame ese archivo: tiene importes, horarios y números de pago, pero nunca el
+token ni el nombre de quien te transfirió.
 
 ---
 
