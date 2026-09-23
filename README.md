@@ -141,8 +141,8 @@ Clic derecho en el ícono → **Configuración...** → contraseña:
 
 ### 3. Probalo
 
-1. Clic en el círculo, cargá un importe chico y **sin centavos** (por ejemplo `10`) y
-   elegí **Transferencia**.
+1. Clic en el círculo, cargá un importe chico (por ejemplo `10`) y elegí
+   **Transferencia**.
 2. Desde otra cuenta —la de un amigo, o tu banco— transferí **exactamente ese importe**
    a tu alias.
 3. En unos segundos, al lado del ícono aparece **✓ LLEGÓ $ 10**. Cerrás el cobro como
@@ -193,10 +193,15 @@ programa se cierra y se abre solo, ya actualizado.
 Tu configuración no se toca, y el ejecutable anterior queda guardado como
 `CobroFlotante.exe.anterior` por si hay que volver atrás.
 
-> **Si actualizás desde la 0.20 o la 0.21** puede aparecer un cartel que dice *"Failed
-> to start embedded python interpreter"*. La actualización ya quedó hecha: tocá
-> **Aceptar** y abrí el programa desde el acceso directo. Era un error de esas
-> versiones al volver a abrirse solas, y está corregido desde la 0.22.
+> **Si actualizás desde la 0.20 o la 0.21** puede aparecer una vez uno de estos
+> carteles:
+>
+> - *"Failed to start embedded python interpreter"*
+> - *"Failed to remove temporary directory"*
+>
+> La actualización ya quedó hecha: tocá **Aceptar** y, si el programa no quedó abierto,
+> abrilo desde el acceso directo. Era un error de esas versiones al volver a abrirse
+> solas, y está corregido desde la 0.22.
 
 ---
 
