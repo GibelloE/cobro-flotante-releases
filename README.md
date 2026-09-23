@@ -72,7 +72,7 @@ Lo único importante para empezar es la pestaña **PANTALLA DEL CLIENTE → Moni
 
 > **¿Tenés un solo monitor?** Podés probarlo igual: en esa misma pestaña, achicá el
 > tamaño y movelo a un costado, así la pantalla del cliente no te tapa todo. Se cierra
-> sola a los 60 segundos, o con el botón *Detener / Cerrar*.
+> sola a los 4 minutos, o con el botón *Detener / Cerrar*.
 
 En **COBRO** cargás el alias, el descuento por efectivo y los planes de cuotas.
 
