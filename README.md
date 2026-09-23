@@ -145,8 +145,9 @@ Clic derecho en el ícono → **Configuración...** → contraseña:
    **Transferencia**.
 2. Desde otra cuenta —la de un amigo, o tu banco— transferí **exactamente ese importe**
    a tu alias.
-3. En unos segundos, al lado del ícono aparece **✓ LLEGÓ $ 10**. Cerrás el cobro como
-   siempre, con un segundo clic en el círculo.
+3. En unos segundos, al lado del ícono aparece **✓ LLEGÓ $ 10**, con el **número de
+   operación** de Mercado Pago, que ya queda copiado: probá pegarlo con Ctrl+V en
+   cualquier lado. Cerrás el cobro como siempre, con un segundo clic en el círculo.
 
 A tener en cuenta:
 
