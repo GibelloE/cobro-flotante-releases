@@ -193,6 +193,11 @@ programa se cierra y se abre solo, ya actualizado.
 Tu configuración no se toca, y el ejecutable anterior queda guardado como
 `CobroFlotante.exe.anterior` por si hay que volver atrás.
 
+> **Si actualizás desde la 0.20 o la 0.21** puede aparecer un cartel que dice *"Failed
+> to start embedded python interpreter"*. La actualización ya quedó hecha: tocá
+> **Aceptar** y abrí el programa desde el acceso directo. Era un error de esas
+> versiones al volver a abrirse solas, y está corregido desde la 0.22.
+
 ---
 
 ## Desinstalar
