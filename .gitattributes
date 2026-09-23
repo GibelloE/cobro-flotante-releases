@@ -1,0 +1,2 @@
+# Un .ps1 va con finales de linea de Windows
+*.ps1 text eol=crlf
