@@ -25,32 +25,39 @@ son probables.
 
 ### 2. Bajá el instalador
 
-Entrá a [`instalar.ps1`](instalar.ps1) y tocá el botón **Download raw file** (el de la
-flecha hacia abajo, arriba a la derecha). Guardalo donde quieras, por ejemplo en
-Descargas.
+**[⬇ CobroFlotante-Setup.exe](https://github.com/GibelloE/cobro-flotante-releases/releases/latest/download/CobroFlotante-Setup.exe)**
+— siempre es la última versión.
 
-### 3. Corré el instalador
+### 3. Doble clic
 
-Clic derecho sobre la carpeta donde lo guardaste, con **Shift** apretado →
-*Abrir la ventana de PowerShell aquí*. Después:
+Va a aparecer **"Windows protegió tu PC"**. Es SmartScreen avisando que el programa no
+tiene firma digital (las firmas se compran). **Más información → Ejecutar de todas
+formas.** Pasa una sola vez.
+
+Después, *Siguiente* hasta el final: se instala en `C:\cobro-flotante` sin pedir
+permisos de administrador, te ofrece un acceso directo en el escritorio, y al terminar
+abre el programa.
+
+Listo: tenés que ver un círculo flotante en pantalla, que se arrastra a donde quieras.
+
+> **Si ya estaba instalado**, podés correr el setup de nuevo encima: si el programa está
+> abierto te pregunta antes de cerrarlo, y tu configuración no se toca.
+
+<details>
+<summary>Otra forma: el script de PowerShell (sin internet, o si el setup no te deja)</summary>
+
+Entrá a [`instalar.ps1`](instalar.ps1), tocá **Download raw file**, y en la carpeta donde
+lo guardaste abrí PowerShell (clic derecho con **Shift** → *Abrir la ventana de
+PowerShell aquí*):
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File instalar.ps1
 ```
 
-El `-ExecutionPolicy Bypass` hace falta porque Windows no ejecuta scripts bajados de
-internet sin eso.
-
-El instalador crea `C:\cobro-flotante`, baja la última versión, **verifica que el
-archivo sea exactamente el publicado** (SHA-256), deja un acceso directo en el
-escritorio y abre el programa.
-
-### 4. "Windows protegió tu PC"
-
-Va a aparecer una vez. Es SmartScreen avisando que el programa no tiene firma digital
-(las firmas se compran). **Más información → Ejecutar de todas formas.**
-
-Listo: tenés que ver un círculo flotante en pantalla, que se arrastra a donde quieras.
+Baja la última versión, **verifica que sea exactamente la publicada** (SHA-256), deja el
+acceso directo y abre el programa. Sin internet, con el `.exe` y su `.sha256` en un
+pendrive: `-Desde D:\CobroFlotante.exe`.
+</details>
 
 ---
 
@@ -124,14 +131,22 @@ Tu configuración no se toca, y el ejecutable anterior queda guardado como
 
 ## Desinstalar
 
-No deja nada en el sistema salvo tres cosas, y se van así:
+*Configuración de Windows → Aplicaciones → Aplicaciones instaladas → **Cobro Flotante**
+→ Desinstalar.* Si el programa está abierto lo cierra, saca los accesos directos y el
+inicio con Windows, y al final te pregunta si querés borrar también tu configuración
+(la respuesta por defecto es no, por si lo volvés a instalar).
 
-1. Borrá la carpeta `C:\cobro-flotante` (ahí adentro está todo, incluida tu
-   configuración).
-2. Borrá el acceso directo del escritorio.
-3. Si activaste *Iniciar con Windows*, sacá la entrada `CobroFlotante` de
-   `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run`. Más fácil:
-   antes de borrar nada, entrá a Configuración → **SISTEMA** y destildá esa opción.
+<details>
+<summary>Si lo instalaste con el script de PowerShell</summary>
+
+Ese no aparece en *Aplicaciones instaladas*. Se saca a mano:
+
+1. Entrá a Configuración → **SISTEMA** y destildá *Iniciar con Windows*.
+2. Cerrá el programa (clic derecho en el ícono → Salir).
+3. Borrá la carpeta `C:\cobro-flotante` y el acceso directo del escritorio.
+
+O más fácil: instalá el setup encima y desinstalá desde *Aplicaciones instaladas*.
+</details>
 
 ---
 
