@@ -152,8 +152,9 @@ A tener en cuenta:
 
 - Detecta **transferencias** (desde Mercado Pago, un banco u otra billetera). No pagos
   con tarjeta ni con QR.
-- Sólo busca mientras está abierta la pantalla de **Transferencia**, no la de Formas de
-  pago.
+- Busca mientras está abierta la pantalla de **Transferencia** o la de **Formas de
+  pago** (en esa, el importe de *Débito / Transferencia*). Desde la versión 0.24; antes,
+  sólo en Transferencia.
 - Si llegan dos transferencias por el mismo importe, avisa **DOS PAGOS IGUALES** y no
   elige ninguna: con dos pagos iguales no hay forma de saber cuál es el de ese cliente.
 - **SIN ACCESO** quiere decir que el token no sirve o venció; **SIN CONEXIÓN**, que no
