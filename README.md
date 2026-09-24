@@ -1,5 +1,14 @@
 # COBRO FLOTANTE
 
+TODO ESTE CODIGO FUE HECHO CON INTELIGENCIA ARTIFICIAL, 
+
+LUEGO FUE: 
+DISEÑADO,
+IMPLEMENTADO,
+FIXEADO,
+Y SOLO ESTE TEXTO FUE ESCRITO
+CON ESTUPIDEZ ARTESANAL 
+
 Pantalla de cobro para el mostrador. El vendedor carga el importe en un ícono flotante
 y el cliente, en un segundo monitor, ve el total y el alias para transferir — o las
 formas de pago con los valores ya calculados (débito, efectivo con descuento, cuotas).
