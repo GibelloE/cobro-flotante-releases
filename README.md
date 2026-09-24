@@ -22,13 +22,13 @@ Acá se publican los ejecutables. El código es privado.
 
 ## Instalar
 
-### 1. Agregá la excepción del antivirus
+### 1. Agregá la excepción del antivirus (OPCIONAL)
 
 Antes de bajar nada, agregá `C:\cobro-flotante` a las exclusiones de tu antivirus
 (en Windows Defender: *Seguridad de Windows → Protección antivirus → Administrar
 la configuración → Exclusiones → Agregar una carpeta*).
 
-No es un capricho: el programa se actualiza solo, y un programa que descarga un
+El programa se actualiza solo, y un programa que descarga un
 ejecutable y reemplaza otro es exactamente lo que hace un virus. Los falsos positivos
 son probables.
 
