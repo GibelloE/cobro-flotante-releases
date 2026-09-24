@@ -156,8 +156,8 @@ A tener en cuenta:
 - Busca mientras está abierta la pantalla de **Transferencia** o la de **Formas de
   pago** (en esa, el importe de *Débito / Transferencia*). Desde la versión 0.24; antes,
   sólo en Transferencia.
-- Si llegan dos transferencias por el mismo importe, avisa **DOS PAGOS IGUALES** y no
-  elige ninguna: con dos pagos iguales no hay forma de saber cuál es el de ese cliente.
+- Si llegan dos transferencias por el mismo importe, avisa **TRANSFERENCIA DUPLICADA** y
+  no elige ninguna: con dos pagos iguales no hay forma de saber cuál es el de ese cliente.
 - **SIN ACCESO** quiere decir que el token no sirve o venció; **SIN CONEXIÓN**, que no
   hay internet. En los dos casos el cobro sigue funcionando igual, a mano.
 
@@ -165,6 +165,27 @@ A tener en cuenta:
 anotado en `C:\cobro-flotante\data\logs\mp.log`, en la línea que dice `encontrado ...
 demora`. Mandame ese archivo: tiene importes, horarios y números de pago, pero nunca el
 token ni el nombre de quien te transfirió.
+
+### 4. (Opcional) Que confirme solo
+
+Desde la versión 0.31 el programa puede cerrar el cobro solo, sin el segundo clic,
+cuando está seguro de que el pago es de ese cliente. Viene apagado.
+
+1. **TURNOS**: si usás una sola PC, elegí **Es la central** (no hace falta prender el
+   turnero). Con varias PCs, una es la central y en las demás va su nombre: son las
+   mismas que las del turnero.
+2. **MERCADO PAGO**: tildá **Confirmar solo el cobro de Transferencia cuando el pago
+   es seguro** y guardá.
+3. Cobrá en **Transferencia** y transferí: sale solo el **PAGO RECIBIDO** y abajo del
+   ícono dice **CONFIRMADO SOLO**, con el número de operación ya copiado.
+
+Si otra caja está cobrando el mismo importe, no confirma ni copia nada: avisa
+**TRANSFERENCIA DUPLICADA** y lo chequeás a mano. Si ese pago ya lo había tomado otra
+caja, avisa **REVISAR** y sigue buscando. Sin conexión con la central, o en la pantalla
+de Formas de pago, avisa como siempre y confirmás vos.
+
+La primera vez, en la central, Windows pregunta si el programa puede usar la red:
+tildá **Redes privadas** y **Permitir** (hace falta un usuario administrador).
 
 ---
 
